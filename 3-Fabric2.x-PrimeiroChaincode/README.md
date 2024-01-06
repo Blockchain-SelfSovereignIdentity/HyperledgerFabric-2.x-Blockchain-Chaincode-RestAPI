@@ -152,6 +152,11 @@ sudo apt-get install npm
 ## Obtendo binários do Fabric (Incluindo Chaincode de amostra)
 Uma vez que temos um ambiente de desenvolvimento configurado, podemos seguir e baixar os binários do Fabric, para conseguirmos executar os Peers, os Orderers, e todos os componentes que são necessários.
 
-Desta forma, a arquitetura a ser criada é que vamos ter um lado de Chaincode. Então tudo isso vai rodar em cima de uma Blockchain:
+Desta forma, na arquitetura a ser criada, vamos ter um lado de Chaincode. Então tudo isso vai rodar em cima de uma Blockchain. Também vamos ter vários Peers ou várias Orgs que estará funcionnando no nosso Contrato Inteligente ou Chaincode. Eles são usados de forma intercambiável no Chaincode do ecossistema maior, nosso Contrato Inteligente, são a mesma coisa.
+
+Também teremos uma Aplicação cliente básica, que usará as bibliotecas do Node (Node-SDK) para se conectar com a Blockchain.
+
+Então vamos ter as partes da Blockchain, que vão ser duas Orgs e um Orderer, e vamos ter uma Aplicação cliente que vai se conectar com a Blockchain usando as APIs do Node.
 
 <img src="https://raw.githubusercontent.com/Blockchain-SelfSovereignIdentity/HyperledgerFabric-2.x-Blockchain-Chaincode-RestAPI/main/3-Fabric2.x-PrimeiroChaincode/arquitetura.png" alt="Arquitetura">
+
