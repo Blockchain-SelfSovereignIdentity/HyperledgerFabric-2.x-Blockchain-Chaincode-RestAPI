@@ -153,3 +153,5 @@ sudo apt-get install npm
 Uma vez que temos um ambiente de desenvolvimento configurado, podemos seguir e baixar os binários do Fabric, para conseguirmos executar os Peers, os Orderers, e todos os componentes que são necessários.
 
 Desta forma, a arquitetura a ser criada é que vamos ter um lado de Chaincode. Então tudo isso vai rodar em cima de uma Blockchain:
+
+<img src="https://raw.githubusercontent.com/Blockchain-SelfSovereignIdentity/HyperledgerFabric-2.x-Blockchain-Chaincode-RestAPI/main/3-Fabric2.x-PrimeiroChaincode/arquitetura.png" alt="Arquitetura">
