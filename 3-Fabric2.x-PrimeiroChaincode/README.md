@@ -119,7 +119,7 @@ sudo apt-get install -y nodejs
     matheuslazaro@matheuslazaro:~$ nodejs -v
     v12.22.9
     ```
-### npm
+### npm (Versão suportada: 6.x ~ talvez seja necessário retroceder a instalação do nodejs manualmente, com curl)
 * Instalação
 ```shell
 sudo apt-get install npm
@@ -148,3 +148,8 @@ sudo apt-get install npm
         unicode: '14.0'
     }
     ```
+
+## Obtendo binários do Fabric (Incluindo Chaincode de amostra)
+Uma vez que temos um ambiente de desenvolvimento configurado, podemos seguir e baixar os binários do Fabric, para conseguirmos executar os Peers, os Orderers, e todos os componentes que são necessários.
+
+Desta forma, a arquitetura a ser criada é que vamos ter um lado de Chaincode. Então tudo isso vai rodar em cima de uma Blockchain:
