@@ -199,7 +199,52 @@ cd fabric-samples/test-network
 ```shell
 docker kill $(docker ps -q)
 ```
-########################################################################################################################################################################
+## Implantando o Chaincode em Javascript (Nodejs)
+* Pasta de Implementações da Blockchain
+```shell
+cd ../asset-transfer-basic
+```
+* Pasta chaincode-javascript
+```shell
+cd ../chaincode-javascript
+```
+* Instalar as dependências necessárias:
+```shell
+npm install
+```
+
+* Em caso de vulnerabilidades encontradas, executar:
+    ```shell
+    npm audit fix
+    ```
+
+* Exportar variáveis de ambiente
+```shell
+cd ~/fabric/fabric-samples/test-network
+
+export FABRIC_CFG_PATH=$PWD/../config/ 
+echo $FABRIC_CFG_PATH 
+/home/matheuslazaro/fabric/fabric-samples/test-network/../config/
+
+export PATH=$PATH:/home/$USER/fabric/fabric-samples/bin/ 
+```
+* Criar um pacote a partir do nosso código-fonte chaincode
+
+```Queremos criar um pacote e o nome do pacote será basic.tar.gz, direcionado para a pasta "../asset-transfer-basic/chaincode-javascript", linguagem node e com rótulo de pacote basic_1.0```
+```shell
+peer lifecycle chaincode package basic.tar.gz \
+    --path ../asset-transfer-basic/chaincode-javascript \
+    --lang node \
+    --label basic_1.0
+
+matheuslazaro@matheuslazaro:~/fabric/fabric-samples/test-network$ ls
+addOrg3       bft-config                          channel-artifacts  configtx  monitordocker.sh  network.sh     prometheus-grafana  scripts       system-genesis-block
+basic.tar.gz  CHAINCODE_AS_A_SERVICE_TUTORIAL.md  compose            log.txt   network.config    organizations  README.md           setOrgEnv.sh
+```
+Com esse pacote "basic.tar.gz" criado na pasta test-network, podemos aplicar no nosso canal para que ele possa ser executado pelos diferentes Peers
+
+
+####################################################################################################################################################################################
 
 # Versão funcional (06/01/2023):
 ```shell
