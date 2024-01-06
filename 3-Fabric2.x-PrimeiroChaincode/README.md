@@ -1,5 +1,5 @@
 # Fabric 2.x - Primeiro Chaincode
-## Configuração e pré-requisitos do Fabric 2.x
+```Configuração e pré-requisitos do Fabric 2.x```
 * Recomendado: Ubuntu 20.04
     * Usado: Ubuntu 22.04.1 LTS
 * Certificar-se do bash estar acessível.
@@ -8,8 +8,8 @@
     /usr/bin/bash
     ```
 
-### Utilitários básicos
-#### Git, Curl e jq
+## Utilitários básicos
+### Git, Curl e jq
 Git é um sistema de controle de versão que permite gerenciar o código-fonte de um projeto, registrar as mudanças feitas e colaborar com outros desenvolvedores.
 
 Curl é um comando que permite fazer requisições para uma URL usando diversos protocolos, como HTTP e HTTPS. O Curl é útil para configurar o Fabric 2.x, pois ele permite testar a comunicação com a API do framework e verificar se os serviços estão funcionando corretamente.
@@ -33,7 +33,7 @@ matheuslazaro@matheuslazaro:~$ sudo apt-get install git curl jq
     matheuslazaro@matheuslazaro:~$ jq --help
     jq - commandline JSON processor [version 1.6]
     ```
-#### Docker
+### Docker
 Docker é uma plataforma de código aberto que permite automatizar o desenvolvimento, implantação e execução de aplicativos em contêineres. Um contêiner é uma unidade padrão de software que empacota o código e todas as suas dependências para que o aplicativo seja executado de forma rápida e confiável de um ambiente de computação para outro. O Docker simplifica o fluxo de gerenciamento de processos de aplicações em contêineres, permitindo que os desenvolvedores dividam um ambiente de aplicação em vários serviços isolados.
 
 * Remover versão antiga do Docker:
@@ -65,7 +65,7 @@ sudo systemctl enable docker
 
     ```
 
-#### Docker-compose
+### Docker-compose
 Docker-compose é uma ferramenta para definir e executar aplicativos multi-contêiner com o Docker. Ele usa as definições de serviço para compilar ambientes totalmente personalizados com contêineres múltiplos que podem compartilhar redes e volumes de dados. O Docker-compose permite construir e executar vários contêineres no mesmo host, bastando apenas um arquivo YAML com as instruções e parâmetros desejados para os nossos contêineres e que com um único comando conseguimos realizar a execução e/ou atualização de todos eles.
 
 * Remover versão antiga:
@@ -94,6 +94,57 @@ matheuslazaro@matheuslazaro:~$ pip install --upgrade paramiko
 #### Modificar o usuário
 ```shell
 echo $USER
-ewgrp docker # locar no grupo docker
+ewgrp docker # logar no grupo docker
 sudo usermod -a -G docker $USER
 ```
+
+Obs.: O Fabric usa por padrão a linguagem GO, entretanto, por escolha própria, usaremos a linguagem Javascript, com Node.js.
+
+### Node.js 12.x (Versão suportada)
+* Instalação
+```shell
+sudo apt-get install nodejs
+
+ou
+
+curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+sudo apt update
+
+sudo apt-get install -y nodejs
+```
+
+* Verificação:
+    ```shell
+    matheuslazaro@matheuslazaro:~$ nodejs -v
+    v12.22.9
+    ```
+### npm
+* Instalação
+```shell
+sudo apt-get install npm
+```
+
+* Verificação:
+    ```shell
+    matheuslazaro@matheuslazaro:~$ npm -- version
+    {
+        npm: '8.5.1',
+        node: '12.22.9',
+        v8: '7.8.279.23-node.56',
+        uv: '1.43.0',
+        zlib: '1.2.11',
+        brotli: '1.0.9',
+        ares: '1.18.1',
+        modules: '72',
+        nghttp2: '1.43.0',
+        napi: '8',
+        llhttp: '2.1.6',
+        http_parser: '2.9.4',
+        openssl: '1.1.1m',
+        cldr: '40.0',
+        icu: '70.1',
+        tz: '2023c',
+        unicode: '14.0'
+    }
+    ```
