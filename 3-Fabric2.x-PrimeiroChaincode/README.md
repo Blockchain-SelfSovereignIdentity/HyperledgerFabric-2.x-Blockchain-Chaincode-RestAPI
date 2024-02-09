@@ -49,11 +49,14 @@ sudo rm -rf /etc/docker
 sudo rm /usr/bin/docker
 sudo rm /snap/bin/docker
 sudo rm /usr/bin/dockerd
+sudo rm /etc/apt/sources.list.d/docker.list
 
 
 ```
 * Instalar:
 https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/
+ou
+https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/
 
 ```shell
 sudo apt-get install ./docker-ce-cli_19.03.12~3-0~ubuntu-bionic_amd64.deb
